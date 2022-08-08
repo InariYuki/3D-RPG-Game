@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e914270665369ce458d060c7f1ffc993, type: 3}
   m_Name: DataNPC
   m_EditorClassIdentifier: 
-  NPC_name: "\u8FF7\u8DEF\u7684\u6751\u6C11"
+  NPC_name: "\u5EB7\u5C3C"
   NPC_dialogues:
   - dialogue_text: "\u63A5\u4E0B\u4F86\u5C31\u7531\u6211 \u9396\u93C8\u7684\u5EB7\u5C3C"
     dialogue_sound: {fileID: 8300000, guid: 61fa27b2c9f68475d948a8e984723357, type: 3}
   - dialogue_text: "\u4F86\u7576\u4F60\u7684"
     dialogue_sound: {fileID: 8300000, guid: 9142a6185b4d34fe8a9c014edd2ab61b, type: 3}
-  - dialogue_text: "\u5C0D\u624B\u5427"
+  - dialogue_text: "\u5C0D\u624B\u5427!"
     dialogue_sound: {fileID: 8300000, guid: f0ad042423d774129a68872fc81b3e4c, type: 3}
