@@ -7,7 +7,7 @@ namespace KitsuneYuki
     public class AttackSystem : MonoBehaviour
     {
         [SerializeField] DataAttack data;
-        bool canAttack = true;
+        protected bool canAttack = true;
         private void OnDrawGizmos()
         {
             Gizmos.color = data.attColor;

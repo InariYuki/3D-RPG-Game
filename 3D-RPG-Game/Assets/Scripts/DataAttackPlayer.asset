@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16287858911c30048b18272c5fb503ce, type: 3}
-  m_Name: DataAttackCony
+  m_Name: DataAttackPlayer
   m_EditorClassIdentifier: 
-  attack: 100
-  attColor: {r: 1, g: 0, b: 0, a: 0.34117648}
-  attArea: {x: 0.79, y: 0.41, z: 1.18}
-  offset: {x: 0.09, y: 1.17, z: 0.42}
+  attack: 300
+  attColor: {r: 1, g: 0, b: 0, a: 0.38431373}
+  attArea: {x: 2, y: 1, z: 2}
+  offset: {x: 0, y: 1, z: 0}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 8
-  attDelay: 0.5
-  animation: {fileID: 5327579647636344352, guid: d193a764e528253418a9c8161269688c, type: 3}
+    m_Bits: 64
+  attDelay: 0
+  animation: {fileID: -203655887218126122, guid: 3be0a3df03597a8469b77af21c5c718a, type: 3}
