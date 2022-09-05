@@ -11,6 +11,7 @@ namespace KitsuneYuki
         [SerializeField] EnemyState enemyState;
         Animator anim;
         NavMeshAgent navAgent;
+        AttackSystem attSys;
         Vector3 targetPosition;
         Vector3 origin;
         float timerIdle;
@@ -19,6 +20,7 @@ namespace KitsuneYuki
         {
             anim = GetComponent<Animator>();
             navAgent = GetComponent<NavMeshAgent>();
+            attSys = GetComponent<EnemyAttack>();
             navAgent.speed = dataEnemy.moveSpeed;
             origin = transform.position;
         }
@@ -47,7 +49,7 @@ namespace KitsuneYuki
         }
         void Wander()
         {
-            if(navAgent.remainingDistance == 0)
+            if (navAgent.remainingDistance == 0)
             {
                 targetPosition = origin + Random.insideUnitSphere * dataEnemy.detectRange;
                 targetPosition.y = transform.position.y;
@@ -68,13 +70,16 @@ namespace KitsuneYuki
         }
         void Track()
         {
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("PunchLeft"))
+            {
+                navAgent.velocity = Vector3.zero;
+            }
             navAgent.SetDestination(targetPosition);
             anim.SetBool("boolMove", true);
-            print(navAgent.remainingDistance);
+            anim.ResetTrigger("triggerAttack");
             if((transform.position - targetPosition).magnitude <= dataEnemy.attackRange)
             {
                 enemyState = EnemyState.Attack;
-                print("attack !");
             }
         }
         void Attack()
@@ -86,16 +91,22 @@ namespace KitsuneYuki
             {
                 timerAttack = 0;
                 anim.SetTrigger("triggerAttack");
+                attSys.Attack();
+                enemyState = EnemyState.Track;
             }
         }
         void CheckTargetInRange()
         {
-            if (enemyState == EnemyState.Attack) return;
             Collider[] hits = Physics.OverlapSphere(transform.position , dataEnemy.detectRange , dataEnemy.detectLayer);
             if(hits.Length != 0)
             {
+                if (enemyState == EnemyState.Attack) return;
                 targetPosition = hits[0].transform.position;
                 enemyState = EnemyState.Track;
+            }
+            else
+            {
+                enemyState = EnemyState.Wander;
             }
         }
         private void OnDrawGizmosSelected()
