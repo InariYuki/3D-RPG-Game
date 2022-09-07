@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 100
   attColor: {r: 1, g: 0, b: 0, a: 0.34117648}
-  attArea: {x: 0.79, y: 0.41, z: 1.18}
-  offset: {x: 0.09, y: 1.17, z: 0.42}
+  attArea: {x: 0.79, y: 0.41, z: 1.76}
+  offset: {x: 0.09, y: 1.17, z: 0.91}
   playerLayer:
     serializedVersion: 2
     m_Bits: 8

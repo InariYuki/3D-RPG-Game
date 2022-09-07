@@ -29,6 +29,10 @@ namespace KitsuneYuki
             StateSwitcher();
             CheckTargetInRange();
         }
+        private void OnDisable()
+        {
+            navAgent.isStopped = true;
+        }
         void StateSwitcher()
         {
             switch (enemyState)

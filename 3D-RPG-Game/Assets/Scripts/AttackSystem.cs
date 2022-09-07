@@ -7,7 +7,13 @@ namespace KitsuneYuki
     public class AttackSystem : MonoBehaviour
     {
         [SerializeField] DataAttack data;
+        [SerializeField] string attAnimName;
         protected bool canAttack = true;
+        protected Animator anim;
+        protected virtual void Awake()
+        {
+            anim = GetComponent<Animator>();
+        }
         private void OnDrawGizmos()
         {
             Gizmos.color = data.attColor;
@@ -29,10 +35,11 @@ namespace KitsuneYuki
         }
         void CheckAttackArea()
         {
+            //if (!anim.GetCurrentAnimatorStateInfo(0).IsName(attAnimName)) return;
             Collider[] hits = Physics.OverlapBox(transform.position + transform.TransformDirection(data.offset) , data.attArea/2 , transform.rotation , data.playerLayer);
             if(hits.Length != 0)
             {
-                print(hits[0].name);
+                hits[0].GetComponent<HealthSystem>().Hurt(data.attack);
             }
         }
     }

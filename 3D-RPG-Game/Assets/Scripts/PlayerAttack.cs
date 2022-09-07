@@ -6,10 +6,10 @@ namespace KitsuneYuki
 {
     public class PlayerAttack : AttackSystem
     {
-        Animator anim;
-        private void Awake()
+        
+        protected override void Awake()
         {
-            anim = GetComponent<Animator>();
+            base.Awake();
         }
         private void Update()
         {
