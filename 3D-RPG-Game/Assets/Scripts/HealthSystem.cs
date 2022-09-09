@@ -7,7 +7,7 @@ namespace KitsuneYuki
 {
     public class HealthSystem : MonoBehaviour
     {
-        [SerializeField] DataHealth data;
+        [SerializeField] protected DataHealth data;
         float HP;
         Animator anim;
         [SerializeField] Image healthBar;

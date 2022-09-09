@@ -16,6 +16,13 @@ namespace KitsuneYuki
         {
             base.Dead();
             eSys.enabled = false;
+            DropProp();
+        }
+        void DropProp(){
+            float value = Random.value;
+            if(value <= data.dropRate){
+                Instantiate(data.prop , transform.position + Vector3.up * 3 , Quaternion.identity);
+            }
         }
     }
 }

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 1000
   canDropProp: 1
-  prop: {fileID: 0}
+  prop: {fileID: 1382892591849579704, guid: 8d6801cef3bc07a48a84a15b6d27c5c8, type: 3}
   dropRate: 1
