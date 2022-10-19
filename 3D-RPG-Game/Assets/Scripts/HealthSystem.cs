@@ -8,9 +8,9 @@ namespace KitsuneYuki
     public class HealthSystem : MonoBehaviour
     {
         [SerializeField] protected DataHealth data;
-        float HP;
+        protected float HP;
         Animator anim;
-        [SerializeField] Image healthBar;
+        [SerializeField] protected Image healthBar;
         AttackSystem ats;
         protected virtual void Awake()
         {

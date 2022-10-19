@@ -35,11 +35,13 @@ namespace KitsuneYuki
         }
         void CheckAttackArea()
         {
-            //if (!anim.GetCurrentAnimatorStateInfo(0).IsName(attAnimName)) return;
             Collider[] hits = Physics.OverlapBox(transform.position + transform.TransformDirection(data.offset) , data.attArea/2 , transform.rotation , data.playerLayer);
             if(hits.Length != 0)
             {
-                hits[0].GetComponent<HealthSystem>().Hurt(data.attack);
+                for(int i = 0; i < hits.Length; i++)
+                {
+                    hits[i].GetComponent<HealthSystem>().Hurt(data.attack);
+                }
             }
         }
     }

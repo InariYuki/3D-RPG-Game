@@ -6,7 +6,7 @@ namespace KitsuneYuki
 {
     public class NPCSystem : MonoBehaviour
     {
-        [SerializeField] DataNPC data_npc;
+        public DataNPC data_npc;
         [SerializeField] GameObject npc_cam;
         DialogueHint hint;
         ThirdPersonController third_person_ctrl;
